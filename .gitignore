@@ -1,0 +1,11 @@
+*.gem
+coverage/*
+*~
+.bundle
+.rvmrc
+log/*
+measurement/*
+pkg/*
+.DS_Store
+spec/dummy/tmp/*
+spec/dummy/log/*.log
