@@ -75,7 +75,11 @@ module MyInfo
       end
 
       def decode_jws(jws)
-        JWT.decode(jws, public_key, true, algorithm: 'RS256').first
+        if config.sandbox?
+          JWT.decode(jws, nil, false, algorithm: 'RS256').first
+        else
+          JWT.decode(jws, public_key, true, algorithm: 'RS256').first
+        end
       end
 
       def http
