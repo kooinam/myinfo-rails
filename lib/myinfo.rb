@@ -16,6 +16,12 @@ require_relative 'myinfo/v3/person'
 require_relative 'myinfo/v3/person_basic'
 require_relative 'myinfo/v3/authorise_url'
 
+require_relative 'myinfo/v4/response'
+require_relative 'myinfo/v4/api'
+require_relative 'myinfo/v4/authorise_url'
+require_relative 'myinfo/v4/token'
+require_relative 'myinfo/v4/entity_person'
+
 # Base MyInfo class
 module MyInfo
   class << self
@@ -31,6 +37,8 @@ module MyInfo
   class Configuration
     attr_accessor :singpass_eservice_id, :app_id, :client_id, :proxy, :private_key, :public_cert, :client_secret,
                   :redirect_uri
+
+    attr_accessor :biz_app_id, :biz_client_id, :biz_client_secret, :biz_redirect_uri
 
     attr_reader :base_url
     attr_writer :public_facing, :sandbox
